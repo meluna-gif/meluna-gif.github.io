@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melat Tesfaye | CS Graduate & Full-Stack Developer</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #f1f5f9;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header / Hero */
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem 2rem;
+            border-bottom: 2px solid #334155;
+        }
+
+        .avatar {
+            width: 140px;
+            height: 140px;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.4);
+        }
+
+        .avatar i {
+            font-size: 4rem;
+            color: white;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            background: linear-gradient(to right, #c084fc, #60a5fa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: #94a3b8;
+            margin-bottom: 1rem;
+        }
+
+        .summary {
+            max-width: 700px;
+            margin: 1rem auto;
+            font-size: 1rem;
+            color: #cbd5e1;
+        }
+
+        .btn-group {
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0.3rem;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #3b82f6;
+        }
+
+        .btn-outline:hover {
+            background: #3b82f6;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -5px #3b82f680;
+        }
+
+        /* Section styling */
+        section {
+            margin: 4rem 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            border-left: 5px solid #38bdf8;
+            padding-left: 1rem;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .skill-card {
+            background: #1e293b;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            transition: 0.2s;
+            border: 1px solid #334155;
+        }
+
+        .skill-card i {
+            margin-right: 8px;
+            color: #38bdf8;
+        }
+
+        .skill-card:hover {
+            background: #2d3a5e;
+            border-color: #60a5fa;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: #1e293b;
+            border-radius: 20px;
+            padding: 1.5rem;
+            transition: 0.3s;
+            border: 1px solid #334155;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: #38bdf8;
+            box-shadow: 0 20px 30px -15px #00000050;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #facc15;
+        }
+
+        .project-card p {
+            color: #cbd5e1;
+            margin: 0.8rem 0;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .tech {
+            background: #0f172a;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-family: monospace;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #60a5fa;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 0.5rem;
+        }
+
+        /* Education & Leadership row */
+        .two-col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-box {
+            background: #1e293b;
+            padding: 1.5rem;
+            border-radius: 20px;
+            border-left: 4px solid #38bdf8;
+        }
+
+        .info-box h3 {
+            margin-bottom: 1rem;
+            color: #facc15;
+        }
+
+        /* Contact & footer */
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .contact-links a {
+            color: #cbd5e1;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-links a:hover {
+            color: #38bdf8;
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid #334155;
+            margin-top: 2rem;
+            color: #64748b;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero -->
+        <div class="hero">
+            <div class="avatar">
+                <i class="fas fa-code"></i>
+            </div>
+            <h1>Melat Tesfaye</h1>
+            <div class="tagline">Computer Science Graduate | Full-Stack Developer</div>
+            <div class="summary">
+                Detail-oriented CS grad who loves building clean, functional web apps. Led dev teams, earned top grades, and ready to build cool stuff.
+            </div>
+            <div class="btn-group">
+                <a href="cv.pdf" class="btn" download><i class="fas fa-download"></i> Download CV</a>
+                <a href="#projects" class="btn btn-outline"><i class="fas fa-eye"></i> See Work</a>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <section>
+            <h2><i class="fas fa-cogs"></i> Tech Arsenal</h2>
+            <div class="skills-grid">
+                <span class="skill-card"><i class="fab fa-js"></i> JavaScript</span>
+                <span class="skill-card"><i class="fab fa-php"></i> PHP</span>
+                <span class="skill-card"><i class="fab fa-java"></i> Java</span>
+                <span class="skill-card"><i class="fab fa-python"></i> Python</span>
+                <span class="skill-card"><i class="fas fa-database"></i> SQL</span>
+                <span class="skill-card"><i class="fab fa-react"></i> React</span>
+                <span class="skill-card"><i class="fab fa-node"></i> Node.js</span>
+                <span class="skill-card"><i class="fab fa-git-alt"></i> Git</span>
+                <span class="skill-card"><i class="fas fa-code"></i> HTML5/CSS3</span>
+                <span class="skill-card"><i class="fas fa-layer-group"></i> OOP</span>
+            </div>
+        </section>
+
+        <!-- Projects (flex zone) -->
+        <section id="projects">
+            <h2><i class="fas fa-rocket"></i> Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- University Clearance System -->
+                <div class="project-card">
+                    <h3>📋 Uni Clearance System</h3>
+                    <p>Multi-dashboard web app that digitized manual clearance. Role-based access for students, HODs, registrars. Earned 'A' grade as Lead Dev.</p>
+                    <div class="tech-stack">
+                        <span class="tech">PHP</span>
+                        <span class="tech">JS</span>
+                        <span class="tech">MySQL</span>
+                    </div>
+                    <a href="https://github.com/meluna-gif/clearance" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> GitHub Repo →
+                    </a>
+                </div>
+                <!-- E-commerce Bookstore -->
+                <div class="project-card">
+                    <h3>📚 Unity Bookstore</h3>
+                    <p>Fully responsive bookstore with dynamic cart & simulated checkout. Real-time inventory using localStorage.</p>
+                    <div class="tech-stack">
+                        <span class="tech">HTML/CSS</span>
+                        <span class="tech">JavaScript</span>
+                    </div>
+                    <a href="https://github.com/meluna-gif/unity-bookstore" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> GitHub Repo →
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education + Leadership -->
+        <section>
+            <div class="two-col">
+                <div class="info-box">
+                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <p><strong>BSc in Computer Science</strong><br>Unity University, Addis Ababa<br><em>April 2026 | GPA: 3.09</em></p>
+                    <p>📘 Web Programming, Database Systems, Network Security, DSA</p>
+                </div>
+                <div class="info-box">
+                    <h3><i class="fas fa-users"></i> Leadership & Languages</h3>
+                    <p><strong>👩‍💻 Team Leader</strong> – Led academic project cycles, coordinated dev teams, and delivered software on time.</p>
+                    <p><strong>🗣️ Languages:</strong> Amharic (Native) · English (Professional Working)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact / Socials -->
+        <section>
+            <h2><i class="fas fa-paper-plane"></i> Connect With Me</h2>
+            <div class="contact-links">
+                <a href="mailto:melattesfaye6002@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://www.linkedin.com/in/melat-tesfaye-3145633ba" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/meluna-gif" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="tel:+251983346220"><i class="fas fa-phone-alt"></i> +251 98 334 6220</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 Melat Tesfaye — Built to flex & impress 💻✨</p>
+            <p style="font-size: 0.8rem;">Addis Ababa, Ethiopia</p>
+        </footer>
+    </div>
+</body>
+</html>
